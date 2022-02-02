@@ -1,10 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 // const EslintPlugin = require('eslint-webpack-plugin');
 // const eslintOptions = require('.eslintrc.json')
 
+const env = process.env.NODE_ENV
+
 module.exports = {
+    mode: env === 'prod' ? 'production':'development',
     entry: path.join(__dirname, 'src', 'index.tsx'),
     devtool: 'inline-source-map',
     devServer: {
@@ -15,7 +19,9 @@ module.exports = {
         static: './dist'
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js", "jsx"]
+        // roots: [path.resolve('src')],
+        extensions: [".tsx", ".ts", ".js", "jsx"],
+        modules: [ path.resolve('./src'), 'node_modules']
     },
     module: {
         rules: [{
@@ -42,14 +48,15 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
+        env === 'dev' ? ( new ReactRefreshWebpackPlugin()): null,    
         new HtmlWebpackPlugin(
             {
                 template: path.join(__dirname, 'index.html' )
             }
         ),
-        // new CopyWebpackPlugin({
-        //     patterns: [{from: path.resolve(__dirname, './src/assets'), to: 'assets'}]
-        // }),
+        new CopyWebpackPlugin({
+            patterns: [{from: path.resolve(__dirname, './src/assets'), to: 'assets'}]
+        }),
         // new EslintPlugin(eslintOptions)
     ]
 }
