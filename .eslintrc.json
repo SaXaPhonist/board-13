@@ -12,7 +12,7 @@
       "plugin:import/typescript",
       "plugin:react/recommended",
       "plugin:react-hooks/recommended",
-      "airbnb",
+       "airbnb",
       "eslint-config-airbnb",
       "airbnb/hooks",
       "airbnb-typescript",

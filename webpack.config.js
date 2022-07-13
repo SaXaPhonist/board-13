@@ -2,8 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-// const EslintPlugin = require('eslint-webpack-plugin');
-// const eslintOptions = require('.eslintrc.json')
+const EslintPlugin = require('eslint-webpack-plugin');
 
 const env = process.env.NODE_ENV
 
@@ -57,6 +56,6 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [{from: path.resolve(__dirname, './src/assets'), to: 'assets'}]
         }),
-        // new EslintPlugin(eslintOptions)
+        new EslintPlugin()
     ]
 }
