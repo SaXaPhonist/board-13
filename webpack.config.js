@@ -18,7 +18,6 @@ module.exports = {
         static: './dist'
     },
     resolve: {
-        // roots: [path.resolve('src')],
         extensions: [".tsx", ".ts", ".js", "jsx"],
         modules: [ path.resolve('./src'), 'node_modules']
     },
@@ -34,11 +33,11 @@ module.exports = {
           },
           {
             test: /\.(?:ico|png|jpe?g|gif|svg)$/i,
-            type: 'asset/resource',
+            type: 'assets/images',
           },
           {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,
-            type: 'asset/resource',
+            type: 'assets/fonts',
           },
     ]
     },

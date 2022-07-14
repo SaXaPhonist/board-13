@@ -4,11 +4,13 @@ import TravelDashboard from 'pages/TravelDashboard';
 
 const App: React.FC = () => {
   return (
-    <div>
-      <Header />
-      <TravelDashboard />
+    <>
+      <div>
+        <Header />
+        <TravelDashboard />
+      </div>
       <SideMenu />
-    </div>
+    </>
   );
 };
 
