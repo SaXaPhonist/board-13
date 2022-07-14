@@ -4,13 +4,13 @@ import TravelDashboard from 'pages/TravelDashboard';
 
 const App: React.FC = () => {
   return (
-    <>
-      <div>
+    <div className="app-layout">
+      <SideMenu />
+      <section className="content">
         <Header />
         <TravelDashboard />
-      </div>
-      <SideMenu />
-    </>
+      </section>
+    </div>
   );
 };
 

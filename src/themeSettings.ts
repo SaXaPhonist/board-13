@@ -7,6 +7,8 @@ export const COLORS = {
   disabledTextColor: '#9B9B9B',
   primaryTextColor: '#27292C',
   secondaryTextColor: '#9AA2AC',
+  buttonColorLight: '##346AFF',
+  buttonColorDark: '#27292C',
 };
 
 const themeOptions = {
@@ -22,6 +24,10 @@ const themeOptions = {
       primary: COLORS.primaryTextColor,
       secondary: COLORS.secondaryTextColor,
       disabled: COLORS.disabledTextColor,
+    },
+    button: {
+      light: COLORS.buttonColorLight,
+      dark: COLORS.buttonColorDark,
     },
   },
   breakpoints: {

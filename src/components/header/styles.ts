@@ -1,7 +1,8 @@
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles';
 
 export const HeaderWrapper = styled('div')({
   display: 'flex',
   flexDirection: 'row',
-  flexWrap: 'wrap',
+  flexWrap: 'nowrap',
+  justifyContent: 'space-between',
 });

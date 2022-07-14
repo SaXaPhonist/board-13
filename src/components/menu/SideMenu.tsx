@@ -1,26 +1,22 @@
-import { Button } from '@mui/material';
+import Button from 'components/button/Button';
 import Logo from 'components/logo/Logo';
 import WeatherWidget from 'components/weatherWidget/weatherWidget';
+import NavigationMenu from './NavigationMenu';
+
+import { SideMenuWrapper } from './styles';
 
 const SideMenu = () => {
   return (
-    <div className="side-menu">
+    <SideMenuWrapper className="side-menu">
       <Logo />
       <Button />
-      <ul>
-        <li>Home</li>
-        <li>All trips</li>
-        <li>travels</li>
-        <li>Rooms</li>
-        <li>Transport</li>
-        <li>Attractions</li>
-      </ul>
+      <NavigationMenu />
       <WeatherWidget />
       <section className="support">
         <img alt="ask question for help" src="" />
         <div>Support</div>
       </section>
-    </div>
+    </SideMenuWrapper>
   );
 };
 
