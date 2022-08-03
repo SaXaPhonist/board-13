@@ -6,10 +6,8 @@ const App: React.FC = () => {
   return (
     <div className="app-layout">
       <SideMenu />
-      <section className="content">
-        <Header />
-        <TravelDashboard />
-      </section>
+      <Header />
+      <TravelDashboard />
     </div>
   );
 };

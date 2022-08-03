@@ -1,8 +1,11 @@
 import { styled } from '@mui/material/styles';
 
-export const HeaderWrapper = styled('div')({
+export const HeaderWrapper = styled('div')(({ theme }) => ({
+  gridColumn: '2 / -1',
+  gridRow: '1',
   display: 'flex',
   flexDirection: 'row',
+  gap: '3em',
   flexWrap: 'nowrap',
-  justifyContent: 'space-between',
-});
+  backgroundColor: theme.palette.secondary.main,
+}));

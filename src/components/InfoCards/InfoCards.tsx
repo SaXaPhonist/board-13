@@ -1,14 +1,22 @@
-import Destination from './Destination';
-import PeopleInfo from './PeopleInfo';
-import TravelDate from './TravelDate';
+import InfoCard from 'components/infoCard/InfoCard';
+import Destination from './infoSections/DestinationInfo';
+import PeopleInfo from './infoSections/PeopleInfo';
+import TravelDate from './infoSections/TravelDate';
+import { InfoCardsContainer } from './styles';
 
 const TravelInfo = () => {
   return (
-    <>
-      <TravelDate />
-      <PeopleInfo />
-      <Destination />
-    </>
+    <InfoCardsContainer className="info-cards">
+      <InfoCard>
+        <TravelDate />
+      </InfoCard>
+      <InfoCard>
+        <PeopleInfo />
+      </InfoCard>
+      <InfoCard>
+        <Destination />
+      </InfoCard>
+    </InfoCardsContainer>
   );
 };
 

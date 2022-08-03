@@ -1,21 +1,25 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const EslintPlugin = require('eslint-webpack-plugin');
+const { DefinePlugin } = require('webpack');
 
-const env = process.env.NODE_ENV
 
-module.exports = {
-    mode: env === 'prod' ? 'production':'development',
+module.exports = (env, argv) =>  ({
     entry: path.join(__dirname, 'src', 'index.tsx'),
-    devtool: 'inline-source-map',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'assets/[name][ext]',
+    },
+    devtool: 'source-map',
     devServer: {
         historyApiFallback: true,
         hot: true,
         port: 8080,
         open: false,
-        static: './dist'
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js", "jsx"],
@@ -32,29 +36,44 @@ module.exports = {
             use: ['style-loader', 'css-loader'],
           },
           {
-            test: /\.(?:ico|png|jpe?g|gif|svg)$/i,
-            type: 'assets/images',
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+            generator: {
+                filename: 'assets/images/[name][ext]'
+            }
           },
           {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,
-            type: 'assets/fonts',
+            type: 'asset/resource',
+            generator: {
+                filename: 'assets/fonts/[hash][ext]'
+            }
           },
     ]
     },
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
-    },
-    plugins: [
-        env === 'dev' ? ( new ReactRefreshWebpackPlugin()): null,    
+    plugins: [    
         new HtmlWebpackPlugin(
             {
-                template: path.join(__dirname, 'index.html' )
+                template: path.join(__dirname, 'index.html' ),
+                hash: true,
+                favicon: 'src/assets/images/favicon.png',
             }
         ),
         new CopyWebpackPlugin({
-            patterns: [{from: path.resolve(__dirname, './src/assets'), to: 'assets'}]
+            patterns: [{from: path.resolve(__dirname, './src/public'), to: 'public'}]
+        }),
+        new Dotenv({
+            path: path.join(__dirname,`${env.short}.env`),
+            allowEmptyValues: true,
+            systemvars: true,
+            silent: true,
+            defaults: false,
+        }),
+        new DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(argv.mode)
         }),
         new EslintPlugin()
-    ]
-}
+    ].concat(
+        argv.mode === 'development' ? [new ReactRefreshWebpackPlugin()]: [],
+        )
+})

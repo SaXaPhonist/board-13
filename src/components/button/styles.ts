@@ -1,11 +1,11 @@
-// import { styled, Theme } from '@mui/material/styles';
-// import { Button as MuiButton } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Button } from '@mui/material';
 
-// interface IProps {
-//   theme: Theme;
-//   color: string;
-// }
-
-// export const CustomButton = styled(MuiButton)<IProps>(({ theme, color }) => ({
-//   backgroundColor: theme.palette.button ,
-// }));
+export const MuiButton = styled(Button)(({ theme }) => ({
+  fontFamily: 'Sora',
+  fontWeight: 600,
+  width: '100%',
+  padding: '1em 5em',
+  color: theme.palette.primary.main,
+  borderRadius: '1em',
+}));

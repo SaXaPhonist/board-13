@@ -1,6 +1,7 @@
-import Button from 'components/button/Button';
+import AddButton from 'components/button/addButton/AddButton';
 import Logo from 'components/logo/Logo';
-import WeatherWidget from 'components/weatherWidget/weatherWidget';
+import Support from 'components/support/Support';
+import WeatherWidget from 'components/widget/WeatherWidget';
 import NavigationMenu from './NavigationMenu';
 
 import { SideMenuWrapper } from './styles';
@@ -9,13 +10,12 @@ const SideMenu = () => {
   return (
     <SideMenuWrapper className="side-menu">
       <Logo />
-      <Button />
+      <AddButton className="menu__add-button" color="info" variant="contained">
+        Add new
+      </AddButton>
       <NavigationMenu />
       <WeatherWidget />
-      <section className="support">
-        <img alt="ask question for help" src="" />
-        <div>Support</div>
-      </section>
+      <Support />
     </SideMenuWrapper>
   );
 };

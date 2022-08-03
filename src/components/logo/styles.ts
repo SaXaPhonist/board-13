@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 export const LogoWrapper = styled('div')({
   display: 'flex',
   flexDirection: 'row',
-  margin: '0 0 2.3em 0',
 });
 
 export const AppTitle = styled('h2')(({ theme }) => ({

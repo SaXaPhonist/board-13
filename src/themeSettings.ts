@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material';
 
 export const COLORS = {
   primaryColor: '#FFF',
-  secondaryColor: '#6B7178',
+  secondaryColor: '#E5E5E5',
   darkColor: '#27292C',
   disabledTextColor: '#9B9B9B',
   primaryTextColor: '#27292C',

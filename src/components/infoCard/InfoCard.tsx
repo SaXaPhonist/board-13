@@ -1,17 +1,17 @@
-const InfoCard = () => {
+import MoreButton from 'components/button/moreButton/MoreButton';
+import React from 'react';
+import { InfoCardContainer } from './styles';
+
+const InfoCard = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
-      <div>
-        <p>travel date</p>
-        <div>s</div>
+    <InfoCardContainer>
+      <div className="info-card__header">
+        <p className="info-card__title">travel date</p>
+        <MoreButton />
       </div>
-      <span />
-      <>
-        <p>01.02.2019</p>
-        <img alt="date long" />
-        <p>15.02.2019</p>
-      </>
-    </div>
+      <div className="info-card__value">Rome</div>
+      <section className="info-section">{children}</section>
+    </InfoCardContainer>
   );
 };
 
