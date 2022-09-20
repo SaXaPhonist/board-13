@@ -1,2 +1,2 @@
-run: npm start
+run: npm start    
 build: npm build
