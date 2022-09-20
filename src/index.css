@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'Sora';
+  src: 
+    local('Sora'),
+    url('assets/fonts/Sora-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: 
+    local('Sora'),
+    url('assets/fonts/Sora-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: 
+    local('Sora'),
+    url('assets/fonts/Sora-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+    --layout-background-color: #E5E5E5;
+    box-sizing: border-box;
+  }
+  
+  *, ::before, ::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    height: 4px;
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400; 
+    background-color: var(--layout-background-color);
+    scrollbar-color: #b6b6b6 #f1f1f1;
+    scrollbar-width: thin;
+  }
+  
+  /* body > iframe {
+    pointer-events: none;
+  } */
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #b6b6b6;
+    width: 4px;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7e7e7e;
+  }
+
+  .app-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 292px);
+    grid-auto-rows: auto;
+    /* grid-auto-flow: dense; */
+    grid-column-gap: 1.5em;
+    grid-row-gap: 2.5em;
+    margin: 0 auto;
+    padding: .5em 0;
+    max-width: 1872px;
+  }
+
+/*  
+  img {
+    image-rendering: initial;
+    filter: none;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+  } */
