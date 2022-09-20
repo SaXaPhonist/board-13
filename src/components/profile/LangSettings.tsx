@@ -1,7 +1,12 @@
-import { Avatar as LangAvatar } from '@mui/material';
+import flagImg from 'assets/images/Flag_UK.png';
+import { LangContainer } from './styles';
 
 const LangSettings = () => {
-  return <LangAvatar alt="choose language" src="" />;
+  return (
+    <LangContainer>
+      <img alt="choose language" src={flagImg} />
+    </LangContainer>
+  );
 };
 
 export default LangSettings;

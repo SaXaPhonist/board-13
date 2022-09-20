@@ -1,21 +1,26 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import { TableHeader, ToDoTableContainer } from './styles';
+import { dummyData } from './data';
 import ToDoCard from './ToDoCard';
 
 const ToDoTable = () => {
   return (
-    <table>
+    <ToDoTableContainer className="todo__table">
       <thead>
-        <tr>
+        <TableHeader>
           <th>#</th>
-          <th>status</th>
+          <th />
           <th>Task Name</th>
           <th>Assignee</th>
           <th>Priority</th>
-        </tr>
+        </TableHeader>
       </thead>
       <tbody>
-        <ToDoCard />
+        {dummyData.map((card) => (
+          <ToDoCard key={card.id} id={card.id} />
+        ))}
       </tbody>
-    </table>
+    </ToDoTableContainer>
   );
 };
 

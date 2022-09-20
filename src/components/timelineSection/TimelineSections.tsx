@@ -1,14 +1,15 @@
 import Calendar from 'components/calendar/Calendar';
 import Schedule from 'components/schedule/Schedule';
-import AddEvent from './AddEvent';
+import { TimelineContainer } from './style';
+import TimelineHeader from './TimelineHeader';
 
 const TimelineSection = () => {
   return (
-    <>
-      <AddEvent />
+    <TimelineContainer>
+      <TimelineHeader />
       <Calendar />
       <Schedule />
-    </>
+    </TimelineContainer>
   );
 };
 

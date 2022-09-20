@@ -1,19 +1,25 @@
-import { Search as SearchIcon } from '@mui/icons-material';
-import { Input as MuiInput, InputAdornment, Select } from '@mui/material';
-import { SearchWrapper } from './styles';
+import { MenuItem } from '@mui/material';
+import { SearchWrapper, StyledFormControl, StyledSelect, SelectLabel, StyledInput } from './styles';
 
 const Search = () => {
   return (
     <SearchWrapper>
-      <Select />
-      <MuiInput
-        placeholder="Search"
-        endAdornment={
-          <InputAdornment position="end">
-            <SearchIcon />
-          </InputAdornment>
-        }
-      />
+      <StyledFormControl variant="outlined" fullWidth>
+        <StyledSelect
+          defaultValue="travels"
+          renderValue={(value) => {
+            if (!value.length) {
+              return <SelectLabel>Travels</SelectLabel>;
+            }
+            return <SelectLabel>{value}</SelectLabel>;
+          }}
+        >
+          <MenuItem value="travels">Travels</MenuItem>
+          <MenuItem value="city">City</MenuItem>
+          <MenuItem value="country">Country</MenuItem>
+        </StyledSelect>
+      </StyledFormControl>
+      <StyledInput className="header-search" />
     </SearchWrapper>
   );
 };

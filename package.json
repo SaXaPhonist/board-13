@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev  webpack-dev-server",
-    "build": "cross-env NODE_ENV=prod webpack",
+    "dev": "webpack-dev-server --mode=development --env short=dev",
+    "build": "webpack --mode=production --env short=prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +24,10 @@
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.3.1",
     "@mui/material": "^5.4.0",
+    "@types/d3-force": "^3.0.3",
+    "d3": "^7.6.1",
+    "d3-force": "^3.0.0",
+    "json-server": "^0.17.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -33,7 +37,11 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@emotion/eslint-plugin": "^11.7.0",
+    "@material-ui/types": "^5.1.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
+    "@types/d3": "^7.4.0",
+    "@types/google.maps": "^3.49.2",
+    "@types/json-server": "^0.14.4",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
@@ -43,6 +51,8 @@
     "copy-webpack-plugin": "^10.2.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
+    "dotenv": "^16.0.1",
+    "dotenv-webpack": "^8.0.0",
     "eslint": "^8.7.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^16.1.0",

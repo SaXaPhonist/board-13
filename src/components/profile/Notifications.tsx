@@ -1,7 +1,12 @@
-import { NotificationAdd } from '@mui/icons-material';
+import alertImg from 'assets/images/Alert.svg';
+import { NotificationButton } from './styles';
 
 const Notifications = () => {
-  return <NotificationAdd />;
+  return (
+    <NotificationButton>
+      <img alt="notifications" src={alertImg} />
+    </NotificationButton>
+  );
 };
 
 export default Notifications;

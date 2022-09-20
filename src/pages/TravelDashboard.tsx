@@ -1,12 +1,13 @@
 import TimelineSection from 'components/timelineSection/TimelineSections';
 import TripSection from 'components/tripSection/TripSection';
+import { DashboardWrapper } from './styles';
 
 const TravelDashboard = () => {
   return (
-    <div className="travel-dashboard">
+    <DashboardWrapper>
       <TripSection />
       <TimelineSection />
-    </div>
+    </DashboardWrapper>
   );
 };
 

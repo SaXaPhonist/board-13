@@ -26,4 +26,28 @@ declare module '*.woff2' {
   export default content;
 }
 
+declare module '*.ttf' {
+  const content: string;
+  export default content;
+}
+
 declare module '*.tsx';
+
+declare namespace ChartTypes {
+  type Data = {
+    id: string;
+    category: string;
+    value: string;
+    fillColor: string;
+  };
+
+  type ForceData = Data & {
+    value: number;
+  };
+
+  type ForceDataSimulated = ForceData & {
+    x: number;
+    y: number;
+    v: number;
+  };
+}
