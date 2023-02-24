@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  react-app:
+    # stdin_open: true,
+    # tty: true,
+    container_name: my-react-app-docker
+    # image: docker-react-app
+    build: #path to Dockerfile
+      context: .
+    ports:
+      - 8080:80
+    #env_file:
+      #- ./.env
+    #enviroment:
+      #- REACT_APP_API_KEY = 'askdnk12l3k%1dfucs91e221'
+    volumes: 
+      - ./src:/app/src:ro #readonly
