@@ -35,7 +35,7 @@ const Map = ({ lat, lng }: IMapProps) => {
     return () => {};
   }, [lat, lng]);
 
-  return <div id="map" style={{ width: '100%', height: '500px' }} />;
+  return <div id="map" className="city-map" style={{ width: '100%', height: '500px' }} />;
 };
 
 export default Map;

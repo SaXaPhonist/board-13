@@ -37,6 +37,7 @@ export const CalendarDays = styled('div')(() => ({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    justifyContent: 'center',
     textAlign: 'center',
     '& > div': {
       position: 'relative',

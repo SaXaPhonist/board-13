@@ -1,4 +1,4 @@
-import image from 'assets/images/vector.png';
+import image from 'assets/images/Vector.png';
 import { AppTitle, LogoImage, LogoWrapper } from './styles';
 
 const Logo = () => (

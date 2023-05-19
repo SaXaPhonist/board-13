@@ -1,1 +1,2 @@
-# ProjectOfBabylon22
+run: npm start    
+build: npm build

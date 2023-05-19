@@ -90,7 +90,7 @@ const ExpensesChart = ({ width, height, backgroundColor, textFillColor }: IBubbl
   }, [animateBubbles, forceData]);
 
   return (
-    <ChartContainer style={{ backgroundColor }}>
+    <ChartContainer className="expenses-chart" style={{ backgroundColor }}>
       <h3 className="expenses-chart__title">Expenses</h3>
       <svg width={width} height={height}>
         {simData ? renderBubbles(simData) : 'Loading ....'}

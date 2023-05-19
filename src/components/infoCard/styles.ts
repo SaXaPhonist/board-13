@@ -3,8 +3,8 @@ import { styled } from '@mui/material';
 export const InfoCardContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  minWidth: '16em',
-  flex: '1 0 auto',
+  // minWidth: '16em',  do you need this?
+  flex: '1 1 auto',
   backgroundColor: theme.palette.primary.main,
   padding: '1em',
   '& > .info-card__header': {

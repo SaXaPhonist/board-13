@@ -14,4 +14,5 @@ export interface IButtonProps {
   children: React.ReactNode;
   color?: TColorVariants;
   variant?: VariantProps;
+  onClick?: () => void;
 }
